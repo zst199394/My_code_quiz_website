@@ -13,7 +13,7 @@ var quiz=[
     correctAnswer: "Math.min(x,y)"
     },
     {
-    question : "Which are the correct 'if' statements to execute certain code if “x” is equal to 2?"
+    question : "Which are the correct 'if' statements to execute certain code if “x” is equal to 2?",
     answers : ["if(x 2)", "if(x = 2)", "if(x == 2)",  "if(x != 2 )"],
     correctAnswer :"if(x == 2)"
     },
