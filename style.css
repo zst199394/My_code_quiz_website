@@ -19,13 +19,13 @@
     margin-top: 2px; 
 }
 .firstQuiz {
-    display : none;
+    /*display : none;
     position: fixed;
     top: 30%;
     left: 20%;
 }
 .secondQuiz {
-   /*display : none;*/
+   display : none;
     position: fixed;
     top: 30%;
     left: 20%;
