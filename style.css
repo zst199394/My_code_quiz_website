@@ -2,14 +2,14 @@ body {
     background-color: rgb(235, 214, 189);
 }
 #homepage {
-    /*display : none;*/
+    display : none;
     color: #256eeb;
     position: fixed;
     top: 30%;
     left: 30%;
 }
 .start-btn {
-    background-color: #256eeb; /* Green */
+    background-color: #256eeb;
     border-radius: 12px;
     color: white;
     padding: 30px 50px;
@@ -20,6 +20,9 @@ body {
     
 
 }
+#questionContainer {
+    font-size: 23px;;
+}
 .btn {
     background-color: rgb(123, 162, 230);
     border: 2px solid rgb(9, 63, 201);
@@ -29,7 +32,7 @@ body {
     margin-top: 2px; 
 }
 .firstQuiz {
-    display : none;
+    /*display : none;*/
     position: fixed;
     top: 30%;
     left: 20%;
