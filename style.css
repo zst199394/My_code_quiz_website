@@ -1,12 +1,22 @@
+body {
+    background-color: rgb(235, 214, 189);
+}
 #homepage {
-    display : none;
-    color: rgb(33, 60, 211);
+    /*display : none;*/
+    color: #256eeb;
     position: fixed;
     top: 30%;
     left: 30%;
 }
 .start-btn {
-    color :rgb(94, 137, 216);
+    background-color: #256eeb; /* Green */
+    border-radius: 12px;
+    color: white;
+    padding: 30px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
     
 
 }
@@ -19,7 +29,7 @@
     margin-top: 2px; 
 }
 .firstQuiz {
-    /*display : none;
+    display : none;
     position: fixed;
     top: 30%;
     left: 20%;
