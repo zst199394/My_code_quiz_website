@@ -1,8 +1,39 @@
-#firstpage {
-    color: firebrick;
-    margin: 40px 80px 40px 80px;
+#homepage {
+    display : none;
+    color: rgb(185, 42, 54);
+    position: fixed;
+    top: 30%;
+    left: 30%;
 }
 .start-btn {
+    color :cornflowerblue;
+    
 
-
+}
+.btn {
+    
+}
+.firstQuiz {
+    /*display : none; */
+    position: fixed;
+    top: 30%;
+    left: 20%;
+}
+.secondQuiz {
+    display : none;
+    position: fixed;
+    top: 30%;
+    left: 20%;
+}
+.thirdQuiz {
+    display : none;
+    position: fixed;
+    top: 30%;
+    left: 20%;
+}
+.forthQuiz {
+    display : none;
+    position: fixed;
+    top: 30%;
+    left: 20%;
 }
