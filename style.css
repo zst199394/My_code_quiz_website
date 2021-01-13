@@ -2,13 +2,15 @@ body {
     background-color: rgb(235, 214, 189);
 }
 #homepage {
-    /*display : none;*/
     color: #256eeb;
     position: fixed;
     top: 30%;
     left: 30%;
 }
-.start-btn {
+.hidden-homepage {
+    display : none;
+}
+#start-btn {
     background-color: #256eeb;
     border-radius: 12px;
     color: white;
@@ -20,8 +22,19 @@ body {
     
 
 }
-#questionContainer {
-    font-size: 23px;;
+#quiz-text {
+    font-size: 23px;
+    display : none;
+    position: fixed;
+    top: 30%;
+    left: 20%;
+}
+.show-quiz{
+    font-size: 23px;
+    position: fixed;
+    top: 30%;
+    left: 20%;
+
 }
 .btn {
     background-color: rgb(123, 162, 230);
@@ -31,27 +44,7 @@ body {
     margin-bottom: 10px;
     margin-top: 2px; 
 }
-.firstQuiz {
-    display : none;
-    position: fixed;
-    top: 30%;
-    left: 20%;
-}
-.secondQuiz {
-   display : none;
-    position: fixed;
-    top: 30%;
-    left: 20%;
-}
-.thirdQuiz {
-   display : none;
-    position: fixed;
-    top: 30%;
-    left: 20%;
-}
-.forthQuiz {
-    display : none;
-    position: fixed;
-    top: 30%;
-    left: 20%;
+
+#scorePage {
+    display :none ;
 }

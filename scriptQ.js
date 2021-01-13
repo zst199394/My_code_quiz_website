@@ -1,4 +1,4 @@
-var quiz=[
+var questionBox=[
     {
     question : "What is the correct syntax for referring to an external script called “geek.js”?",
     answers :["< script src=”geek.js” >",
