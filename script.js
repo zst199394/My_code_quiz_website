@@ -21,9 +21,8 @@ startBtn.addEventListener("click",function startGame(){
     
   })
 
-//  run next Question
-var questionBtn=document.getElementsByClassName("btn")
- questionBtn.addEventListener("click",function nextQuestion(){
+//  run next Question when clicked answers
+document.getElementById("btn-1").addEventListener("click",function nextQuestion(){
   currentQuestion++
   document.getElementById("question-text").textContent= questionBox[currentQuestion].question
   document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
@@ -31,6 +30,32 @@ var questionBtn=document.getElementsByClassName("btn")
   document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
   document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
 })
+document.getElementById("btn-2").addEventListener("click",function nextQuestion(){
+    currentQuestion++
+    document.getElementById("question-text").textContent= questionBox[currentQuestion].question
+    document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
+    document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
+    document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
+    document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
+  })
+  document.getElementById("btn-3").addEventListener("click",function nextQuestion(){
+    currentQuestion++
+    document.getElementById("question-text").textContent= questionBox[currentQuestion].question
+    document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
+    document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
+    document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
+    document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
+  })
+  document.getElementById("btn-4").addEventListener("click",function nextQuestion(){
+    currentQuestion++
+    document.getElementById("question-text").textContent= questionBox[currentQuestion].question
+    document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
+    document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
+    document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
+    document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
+  })
+
+  
 
   
 
