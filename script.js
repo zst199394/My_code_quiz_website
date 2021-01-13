@@ -15,11 +15,13 @@ startBtn.addEventListener("click",function startGame(){
     document.getElementById("homepage").setAttribute("class","hidden-homepage") //hide the homepage
     document.getElementById("quiz-text").setAttribute("id","show-quiz")//show the questions
     var quizText=document.getElementById("show-quiz")
-    var answerText=document.getElementById("answer-text")
-    for(var i =0; i< questionBox.length; i++){
-    quizText.textContent= questionBox[i].question
-    answerText.textContent= questionBox[i].answers
-    startTimer(0) }
+    var currentQuestion = 0;
+    quizText.textContent= questionBox[currentQuestion].question
+    document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
+    document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
+    document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
+    document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
+    startTimer(0) 
   })
   
 
@@ -29,7 +31,7 @@ timer = setInterval(function(){
 timerCount++;
 timerText.textContent = ("Time : "+ timerCount);
 
-},); 
+} ); 
 }
 /*WHEN I answer a question
 THEN I am presented with another question
