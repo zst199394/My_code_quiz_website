@@ -3,38 +3,33 @@ var startBtn=document.getElementById("start-btn");
 var timerText =document.getElementById("timer");
 var timerCount =0;
 var timer;
-var quizText=document.getElementById("quiz-text");
-var answerText=document.getElementById("answr-text")
+
+
 
 
 //if Start  byn clicked
 /* create function
 THEN a timer starts and I am presented with a question*/
-startBtn.addEventListener("click",function startGame(){
-    document.getElementById("homepage").setAttribute("class","hidden-homepage"); //hide the homepage
-    document.getElementById("quiz-text").setAttribute("class","show-quiz");
-    showQuestions(0);
-  })
-
-
-
 // getting questions and answers from array
-function showQuestions(index){
-    displayQuiz();
-    startTimer(0);
-quizText.innerHtml = questionBox[index].question;
-answerText.innerHtml= questionBox[index].answers;
+startBtn.addEventListener("click",function startGame(){
+    document.getElementById("homepage").setAttribute("class","hidden-homepage") //hide the homepage
+    document.getElementById("quiz-text").setAttribute("id","show-quiz")//show the questions
+    var quizText=document.getElementById("show-quiz")
+    var answerText=document.getElementById("answer-text")
+    for(var i =0; i< questionBox.length; i++){
+    quizText.textContent= questionBox[i].question
+    answerText.textContent= questionBox[i].answers
+    startTimer(0) }
+  })
+  
 
-
-    
-}
 //Timer start
 function startTimer(){
 timer = setInterval(function(){
 timerCount++;
-timerText.textcontent ="Time : "+ timerCount;
+timerText.textContent = ("Time : "+ timerCount);
 
-},);
+},); 
 }
 /*WHEN I answer a question
 THEN I am presented with another question
