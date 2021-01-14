@@ -22,8 +22,7 @@ startBtn.addEventListener("click",function startGame(){
     choice3.textContent= questionBox[currentQuestion].answers[2]
     choice4.textContent= questionBox[currentQuestion].answers[3]
     startTimer() 
-    timerCount=5000;
-    
+    timerCount=5000; 
   })
 
 // WHEN I answer a question,presented with another question
@@ -37,11 +36,18 @@ choice1.addEventListener("click",function nextQuestion(){
   choice2.textContent= questionBox[currentQuestion].answers[1]
   choice3.textContent= questionBox[currentQuestion].answers[2]
   choice4.textContent= questionBox[currentQuestion].answers[3]
-  if(questionBox[currentQuestion].answers[0]===questionBox[currentQuestion].correctAnswer)
+  if(questionBox[currentQuestion].answers[0]==questionBox[currentQuestion].correctAnswer)
   document.getElementById("check-answer").append('Last answer : Correct !')
   else 
   document.getElementById("check-answer").append('Last answer: Wrong! !')
-  
+  // if(currentQuestion=3){
+  //   $(".btn").click(function () {
+      
+  //     console.log("You are all done!!!!");
+  //     finishGame()
+  // });
+    
+  // }
 })
  choice2.addEventListener("click",function nextQuestion(){
     console.log("you choose"+questionBox[currentQuestion].answers[1])
@@ -51,11 +57,11 @@ choice1.addEventListener("click",function nextQuestion(){
     choice2.textContent= questionBox[currentQuestion].answers[1]
     choice3.textContent= questionBox[currentQuestion].answers[2]
     choice4.textContent= questionBox[currentQuestion].answers[3]
-    if(questionBox[currentQuestion].answers[1]===questionBox[currentQuestion].correctAnswer)
+    if(questionBox[currentQuestion].answers[1]==questionBox[currentQuestion].correctAnswer)
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
-    
+   
   })
   choice3.addEventListener("click",function nextQuestion(){
     console.log("you choose"+questionBox[currentQuestion].answers[2])
@@ -65,7 +71,7 @@ choice1.addEventListener("click",function nextQuestion(){
     document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
     document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
     document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
-    if(questionBox[currentQuestion].answers[2]===questionBox[currentQuestion].correctAnswer)
+    if(questionBox[currentQuestion].answers[2]==questionBox[currentQuestion].correctAnswer)
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
@@ -79,11 +85,11 @@ choice1.addEventListener("click",function nextQuestion(){
     document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
     document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
     document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
-    if(questionBox[currentQuestion].answers[3]===questionBox[currentQuestion].correctAnswer)
+    if(questionBox[currentQuestion].answers[3]==questionBox[currentQuestion].correctAnswer)
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
-    
+   
   }) 
 //Timer start
 function startTimer(){
@@ -99,11 +105,12 @@ WHEN all questions are answered or the timer reaches 0
 THEN the game is over
 WHEN the game is over*/
 // THEN I can save my initials and score
-/*if (currentQuestion=4){
-function finishGame(){
+// 
+if(currentQuestion===3){
+  document.getElementsByClassName("btn").addEventListener("click",function finishGame(){
+    console.log("You finished!")
     document.getElementById("scorePage").setAttribute("id","show-score")
-  }
-}*/
-
-  
+    document.getElementById("quiz-text").setAttribute("id","squiz-text")
+  });
+}
 
