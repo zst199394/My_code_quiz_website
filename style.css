@@ -1,6 +1,14 @@
 body {
     background-color: rgb(235, 214, 189);
 }
+#check-answer {
+    position: fixed;
+    top: 85%;
+    left: 20%;
+    font-size: 20px;
+    color :rgb(82, 111, 192)
+   
+}
 #homepage {
     color: #256eeb;
     position: fixed;
@@ -48,4 +56,10 @@ body {
 
 #scorePage {
     display :none ;
+    
+}
+#show-score {
+    position: fixed;
+    top: 30%;
+    left: 20%;
 }
