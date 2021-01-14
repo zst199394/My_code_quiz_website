@@ -4,8 +4,13 @@ Build a timed coding quiz with multiple-choice questions. This app will run in t
 https://zst199394.github.io/My_code_quiz_website/.
 https://github.com/zst199394/My_code_quiz_website
 ![code quiz](./codingquizscreen.png)
-# 04 Web APIs: Code Quiz
-As you proceed in your journey to becoming a full-stack web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+# Code Quiz challenge:
+As we proceed in our journey to becoming a full-stack web developer, it’s likely that we’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+
+# Develop Purpose:
+Coding your own JavaScript quiz is also a fantastic learning exercise. It teaches you how to deal with events, manipulate the DOM, handle user input, give feedback to the user and keep track of their score (for example, using client-side storage). And when you have a basic quiz up and running, there are a whole bunch of possibilities to add more advanced functionality, such as pagination. 
+In this project,I am going to create a multi-step JavaScript quiz which you’ll be able to adapt to your needs and add to your own site. If you’d like to see what we’ll be ending up with, you can skip ahead and see the working quiz.
+https://zst199394.github.io/My_code_quiz_website/.
 
 ## User Story
 
