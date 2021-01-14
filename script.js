@@ -22,7 +22,7 @@ startBtn.addEventListener("click",function startGame(){
     choice3.textContent= questionBox[currentQuestion].answers[2]
     choice4.textContent= questionBox[currentQuestion].answers[3]
     startTimer() 
-    timerCount=80; 
+    timerCount=60; 
   })
 
 // WHEN I answer a question,presented with another question
@@ -43,7 +43,6 @@ choice1.addEventListener("click",function nextQuestion(){
   choice2.textContent= questionBox[currentQuestion].answers[1]
   choice3.textContent= questionBox[currentQuestion].answers[2]
   choice4.textContent= questionBox[currentQuestion].answers[3]
-  
 })
  choice2.addEventListener("click",function nextQuestion(){
     if(questionBox[currentQuestion].answers[1]==questionBox[currentQuestion].correctAnswer)
@@ -77,8 +76,7 @@ choice1.addEventListener("click",function nextQuestion(){
     document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
     document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
     document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
-   
-    
+ 
   })
   choice4.addEventListener("click",function nextQuestion(){
     if(questionBox[currentQuestion].answers[3]==questionBox[currentQuestion].correctAnswer)
@@ -95,7 +93,6 @@ choice1.addEventListener("click",function nextQuestion(){
     document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
     document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
     document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
-    
    
   }) 
 //Timer start
@@ -125,4 +122,23 @@ WHEN the game is over*/
     document.getElementById("score").append("Your score is : "+timerCount)
 
    }
+
+   var submitBtn =document.getElementById("submiit-btn");
+   var username = document.getElementById("user-input");
+   var recentScore =localStorage.getItem("recentScore")
+   localStorage.setItem("highscores", JSON.stringify([]));
+   console.log(localStorage.getItem("highscores"));
+   timerCount=recentScore;
+   submitBtn.addEventListener("click",saveHighscore)
+   function saveHighscore(e){
+     e.preventDefault();
+    localStorage.setItem("name", username.value);
+     var score ={
+       score : recentScore,
+       name: username.value
+     }
+     highscores.push(score);
+     console.log(highscores);
+    };
+
 
