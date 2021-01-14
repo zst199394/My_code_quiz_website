@@ -21,6 +21,7 @@ startBtn.addEventListener("click",function startGame(){
     choice2.textContent= questionBox[currentQuestion].answers[1]
     choice3.textContent= questionBox[currentQuestion].answers[2]
     choice4.textContent= questionBox[currentQuestion].answers[3]
+    console.log(currentQuestion)
     startTimer() 
     timerCount=5000; 
   })
@@ -29,66 +30,74 @@ startBtn.addEventListener("click",function startGame(){
 //run next Question when clicked any button
 //if userChoice=correctAnswer then append right ,if not wrong
 choice1.addEventListener("click",function nextQuestion(){
+  if(questionBox[currentQuestion].answers[0]==questionBox[currentQuestion].correctAnswer)
+  document.getElementById("check-answer").append('Last answer : Correct !')
+  else 
+  document.getElementById("check-answer").append('Last answer: Wrong! !')
   console.log("you choose"+questionBox[currentQuestion].answers[0])
+  if(currentQuestion===3)
+  finishGame()
   currentQuestion++
+  console.log(currentQuestion)
   questionText.textContent= questionBox[currentQuestion].question
   choice1.textContent= questionBox[currentQuestion].answers[0]
   choice2.textContent= questionBox[currentQuestion].answers[1]
   choice3.textContent= questionBox[currentQuestion].answers[2]
   choice4.textContent= questionBox[currentQuestion].answers[3]
-  if(questionBox[currentQuestion].answers[0]==questionBox[currentQuestion].correctAnswer)
-  document.getElementById("check-answer").append('Last answer : Correct !')
-  else 
-  document.getElementById("check-answer").append('Last answer: Wrong! !')
-  // if(currentQuestion=3){
-  //   $(".btn").click(function () {
-      
-  //     console.log("You are all done!!!!");
-  //     finishGame()
-  // });
-    
-  // }
+  
 })
  choice2.addEventListener("click",function nextQuestion(){
-    console.log("you choose"+questionBox[currentQuestion].answers[1])
-    currentQuestion++
-    questionText.textContent= questionBox[currentQuestion].question
-    choice1.textContent= questionBox[currentQuestion].answers[0]
-    choice2.textContent= questionBox[currentQuestion].answers[1]
-    choice3.textContent= questionBox[currentQuestion].answers[2]
-    choice4.textContent= questionBox[currentQuestion].answers[3]
     if(questionBox[currentQuestion].answers[1]==questionBox[currentQuestion].correctAnswer)
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
    
+    console.log("you choose"+questionBox[currentQuestion].answers[1])
+    if(currentQuestion===3)
+    finishGame()
+    currentQuestion++
+    console.log(currentQuestion)
+    questionText.textContent= questionBox[currentQuestion].question
+    choice1.textContent= questionBox[currentQuestion].answers[0]
+    choice2.textContent= questionBox[currentQuestion].answers[1]
+    choice3.textContent= questionBox[currentQuestion].answers[2]
+    choice4.textContent= questionBox[currentQuestion].answers[3]
+    
   })
   choice3.addEventListener("click",function nextQuestion(){
-    console.log("you choose"+questionBox[currentQuestion].answers[2])
-    currentQuestion++
-    questionText.textContent= questionBox[currentQuestion].question
-    document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
-    document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
-    document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
-    document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
-    if(questionBox[currentQuestion].answers[2]==questionBox[currentQuestion].correctAnswer)
+     if(questionBox[currentQuestion].answers[2]==questionBox[currentQuestion].correctAnswer)
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
-    
-  })
-  choice4.addEventListener("click",function nextQuestion(){
-    console.log("you choose"+questionBox[currentQuestion].answers[3])
+    console.log("you choose"+questionBox[currentQuestion].answers[2])
+    if(currentQuestion===3)
+    finishGame()
     currentQuestion++
+    console.log(currentQuestion)
     questionText.textContent= questionBox[currentQuestion].question
     document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
     document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
     document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
     document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
+   
+    
+  })
+  choice4.addEventListener("click",function nextQuestion(){
     if(questionBox[currentQuestion].answers[3]==questionBox[currentQuestion].correctAnswer)
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
+    console.log("you choose"+questionBox[currentQuestion].answers[3])
+    if(currentQuestion===3)
+    finishGame()
+    currentQuestion++
+    console.log(currentQuestion)
+    questionText.textContent= questionBox[currentQuestion].question
+    document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
+    document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
+    document.getElementById("btn-3").textContent= questionBox[currentQuestion].answers[2]
+    document.getElementById("btn-4").textContent= questionBox[currentQuestion].answers[3]
+    
    
   }) 
 //Timer start
@@ -106,11 +115,12 @@ THEN the game is over
 WHEN the game is over*/
 // THEN I can save my initials and score
 // 
-if(currentQuestion===3){
-  document.getElementsByClassName("btn").addEventListener("click",function finishGame(){
+// if(currentQuestion===3){
+//   document.getElementsByClassName("btn").addEventListener("click",
+  function finishGame(){
     console.log("You finished!")
-    document.getElementById("scorePage").setAttribute("id","show-score")
-    document.getElementById("quiz-text").setAttribute("id","squiz-text")
-  });
+    document.getElementById("show-quiz").setAttribute("id","quiz-text") //hide question page
+    document.getElementById("scorePage").setAttribute("id","show-score")//show scorepage
+  
 }
 
