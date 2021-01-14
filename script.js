@@ -21,9 +21,8 @@ startBtn.addEventListener("click",function startGame(){
     choice2.textContent= questionBox[currentQuestion].answers[1]
     choice3.textContent= questionBox[currentQuestion].answers[2]
     choice4.textContent= questionBox[currentQuestion].answers[3]
-    console.log(currentQuestion)
     startTimer() 
-    timerCount=5000; 
+    timerCount=80; 
   })
 
 // WHEN I answer a question,presented with another question
@@ -34,11 +33,11 @@ choice1.addEventListener("click",function nextQuestion(){
   document.getElementById("check-answer").append('Last answer : Correct !')
   else 
   document.getElementById("check-answer").append('Last answer: Wrong! !')
+  console.log(currentQuestion)
   console.log("you choose"+questionBox[currentQuestion].answers[0])
   if(currentQuestion===3)
   finishGame()
   currentQuestion++
-  console.log(currentQuestion)
   questionText.textContent= questionBox[currentQuestion].question
   choice1.textContent= questionBox[currentQuestion].answers[0]
   choice2.textContent= questionBox[currentQuestion].answers[1]
@@ -51,12 +50,11 @@ choice1.addEventListener("click",function nextQuestion(){
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
-   
+    console.log(currentQuestion)
     console.log("you choose"+questionBox[currentQuestion].answers[1])
-    if(currentQuestion===3)
+   if(currentQuestion===3)
     finishGame()
     currentQuestion++
-    console.log(currentQuestion)
     questionText.textContent= questionBox[currentQuestion].question
     choice1.textContent= questionBox[currentQuestion].answers[0]
     choice2.textContent= questionBox[currentQuestion].answers[1]
@@ -69,11 +67,11 @@ choice1.addEventListener("click",function nextQuestion(){
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
+    console.log(currentQuestion)
     console.log("you choose"+questionBox[currentQuestion].answers[2])
     if(currentQuestion===3)
     finishGame()
     currentQuestion++
-    console.log(currentQuestion)
     questionText.textContent= questionBox[currentQuestion].question
     document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
     document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
@@ -87,11 +85,11 @@ choice1.addEventListener("click",function nextQuestion(){
     document.getElementById("check-answer").append("Last answer : Correct !")
     else 
     document.getElementById("check-answer").append("Last answer: Wrong! !")
+    console.log(currentQuestion)
     console.log("you choose"+questionBox[currentQuestion].answers[3])
     if(currentQuestion===3)
     finishGame()
     currentQuestion++
-    console.log(currentQuestion)
     questionText.textContent= questionBox[currentQuestion].question
     document.getElementById("btn-1").textContent= questionBox[currentQuestion].answers[0]
     document.getElementById("btn-2").textContent= questionBox[currentQuestion].answers[1]
@@ -106,7 +104,7 @@ timer = setInterval(function(){
 timerCount--;
 timerText.textContent = ("Time : "+ timerCount)
 
-}); 
+} ,1000); 
 }
 /*WHEN I answer a question incorrectly
 THEN time is subtracted from the clock
@@ -118,9 +116,13 @@ WHEN the game is over*/
 // if(currentQuestion===3){
 //   document.getElementsByClassName("btn").addEventListener("click",
   function finishGame(){
-    console.log("You finished!")
+    currentQuestion=0
+    console.log("You finished!!")
     document.getElementById("show-quiz").setAttribute("id","quiz-text") //hide question page
     document.getElementById("scorePage").setAttribute("id","show-score")//show scorepage
-  
-}
+    clearInterval(timer)
+    console.log(timerCount)
+    document.getElementById("score").append("Your score is : "+timerCount)
+
+   }
 
